@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Smart Tools</title>
+</head>
+
+<body>
+
+<a href="/"> home </a>
+
+<h1>Welcome</h1>
+
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="file" name="video">
+    <button type="submit" name="uploadFile"> upload</button>
+
+    {%if url%}
+    <p> Uploaded file: {{ name }} <a href="{{ url }}"> {{ url }}</a> </p>
+    <video width="320" height="240" controls>
+        <source src={{ url }} type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    {% endif %}
+
+</form>
+
+
+</body>
