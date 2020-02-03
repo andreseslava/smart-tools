@@ -1,22 +1,18 @@
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.core.files.storage import FileSystemStorage
+
+from contests.models import Contest
+from uploads.forms import UploadForm
 
 
 def upload(request):
-    context = {}
     if request.method == 'POST':
-        print("Posting Image")
-        uploaded_video = request.FILES['video']
-        print(uploaded_video.name)
-        print(uploaded_video.size)
-        fs = FileSystemStorage()
-        name = fs.save(uploaded_video.name, uploaded_video)
-        url = fs.url(name)
-        print(url)
-        context['url'] = url
-        context['name'] = name
-        return render(request, 'uploads/upload.html', context)
+        form = UploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            model = form.save(commit=False)
+            model.save()
+            return HttpResponseRedirect('/uploads')
     else:
-        print("Get Option")
-        return render(request, 'uploads/upload.html')
+        form = UploadForm();
+
+    return render(request, 'contests/contest.html', {'form': form})
