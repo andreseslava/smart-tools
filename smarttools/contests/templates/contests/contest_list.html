@@ -1,0 +1,28 @@
+<div>
+    {% block content %}
+
+    <br>
+    <br>
+
+    <table border="1px">
+        <td>Nombre</td>
+        <td>start_date</td>
+        <td>end_date</td>
+        <td>path</td>
+        <td>prize</td>
+        <td>create_at</td>
+        <td>author</td>
+        {% for tut in tutorials %}
+        <tr>
+            <td>{{tut.name}}</td>
+            <td>{{tut.startDate}}</td>
+            <td>{{tut.endDate}}</td>
+            <td>{{tut.path}}</td>
+            <td>{{tut.prize}}</td>
+            <td>{{tut.created_at}}</td>
+            <td>{{tut.author}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</div>

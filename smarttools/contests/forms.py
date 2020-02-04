@@ -1,6 +1,6 @@
 from django import forms
 
-from contests.models import Contest
+from .models import Contest
 
 
 class ContestForm(forms.ModelForm):
