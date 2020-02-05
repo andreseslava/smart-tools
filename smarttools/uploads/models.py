@@ -1,6 +1,7 @@
 from django.db import models
 
 from contests.models import Contest
+# from smarttools.contests.models import Contest
 
 '''
 Desde el Home del Concurso, el usuario debe poder subir un nuevo video, para ello el  usuario  debe  ingresar:  
@@ -19,7 +20,7 @@ class Video(models.Model):
     sureName = models.CharField(max_length=150, null=True)
     email = models.EmailField(max_length=254, null=True)
     video = models.FileField(upload_to='videos')
-    created_At = models.DateTimeField(auto_now_add=True)
+    created_At = models.DateTimeField(auto_now_add=False)
     contest = models.ForeignKey(Contest, on_delete=models.CASCADE, null=False, blank=False, default=1)
 
     def __str__(self):

@@ -25,7 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', views.home),
     url(r'^uploads/', include('uploads.urls')),
-    url('', include('contests.urls'))
+    url('', include('contests.urls')),
+    url('', include('uploads.urls'))
 ]
 
 if settings.DEBUG:
