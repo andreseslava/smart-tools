@@ -1,4 +1,9 @@
 <div>
+    <h1>esta es la vista de listado de eventos por cada usuario administrador falta el logueo de session para
+    que muestre los concursos particulares a cada usuario </h1>
+</div>
+
+<div>
     {% block content %}
 
     <br>
@@ -12,6 +17,10 @@
         <td>prize</td>
         <td>create_at</td>
         <td>author</td>
+        <td>db id</td>
+        <td>detail</td>
+        <td>editar entrada</td>
+        <td>eliminar entrada</td>
         {% for tut in tutorials %}
         <tr>
             <td>{{tut.name}}</td>
@@ -21,6 +30,10 @@
             <td>{{tut.prize}}</td>
             <td>{{tut.created_at}}</td>
             <td>{{tut.author}}</td>
+            <td>{{tut.id}}</td>
+            <td><a href="{% url 'contest-object-list' tut.id %}"><input type="button" value="ingresar"></a></td>
+            <td><a href="{% url 'contest-update' tut.id %}"><input type="button" value="editar"></a></td>
+            <td><a href="{% url 'contest-delete' tut.id %}"><input type="button" value="eliminar"></a></td>
         </tr>
         {% endfor %}
     </table>

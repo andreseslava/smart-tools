@@ -1,0 +1,47 @@
+<div>
+    <h1> esta es la vista de videos por concurso</h1>
+</div>
+
+<div>
+    <p>esta es la vista que ven los usuarios finales del video aquí va a estar
+    el listado de videos por concurso</p>
+</div>
+
+<div>
+    {% block content %}
+    {% load static %}
+    <br>
+    <br>
+
+     <a href="{% url 'upload-video' %}"> subir un video</a>
+
+    <br>
+    <br>
+    <br>
+    <table border="1px">
+        <tr>
+            <td>id</td>
+            <td>titl</td>
+            <td>description</td>
+            <td>vid.sureName</td>
+            <td>email</td>
+            <td>video</td>
+            <td>created_At</td>
+            <td>contest</td>
+        </tr>
+
+        {% for vid in videos %}
+            <tr>
+                <td>{{vid.id}}</td>
+                <td>{{vid.title}}</td>
+                <td>{{vid.description}}</td>
+                <td>{{vid.sureName}}</td>
+                <td>{{vid.email}}</td>
+                <td>{{vid.video}}</td>
+                <td>{{vid.created_At}}</td>
+                <td>{{vid.contest}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</div>

@@ -19,5 +19,5 @@ from . import views
 
 urlpatterns = [
     url(r'^as$', views.upload),
-    url('contest_test_home', views.UploadDetailForm.as_view(), name='upload-video')
+    url('subir_video', views.UploadDetailForm.as_view(), name='upload-video')
 ]
