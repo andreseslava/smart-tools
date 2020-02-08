@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'uploads',
     'contests',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
     },
 ]
 
@@ -123,3 +125,5 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = '/'
