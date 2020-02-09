@@ -11,6 +11,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
+from django.contrib.auth.decorators import login_required
 
 
 def contest(request):
@@ -29,7 +30,9 @@ def contest(request):
 class ContestListView(ListView):
     model = ContestForm
     context_object_name = "tutorials"
-
+    
+    #def get_queryset(self):
+     #   return Contest.objects.filter(author=self.request.user)
 
 class ContestVideoListView(ListView):
     context_object_name = "videos"

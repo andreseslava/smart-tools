@@ -26,15 +26,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="sign-in">Entrar</a>
+                        <a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Salir</a>
                 </li>
+                {% else %}
+                <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'login' %}">Entrar</a>
+                </li>
+                {% endif %}
 
             </ul>
         </div>
     </div>
 </nav>
-{% block pagecontent %}
+{% block content %}
 {% endblock %}
 
 <!-- Optional JavaScript -->
