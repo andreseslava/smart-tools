@@ -46,15 +46,20 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#services">Como funciona</a>
                 </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link js-scroll-trigger" href="#portfolio">Portafolio</a>-->
+<!--                </li>-->
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Contactenos</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{% url 'login' %}">Ingresar</a>
+                    <a class="nav-link js-scroll-trigger" href="{% url 'signup' %}">Registrate</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#contact">Registrarse</a>
+                    <a class="nav-link js-scroll-trigger" href="{% url 'login' %}">Inicia Sesion</a>
                 </li>
+
             </ul>
         </div>
     </div>
@@ -105,7 +110,7 @@
                 <div class="mt-5">
                     <i class="fas fa-4x fa-gem text-primary mb-4"></i>
                     <h3 class="h4 mb-2">Paso 1</h3>
-                    <p class="text-muted mb-0"> Registrate en nuestra plataforma!</p>
+                    <p class="text-muted mb-0"><a href="registrate">Registrate</a> en nuestra plataforma!</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">

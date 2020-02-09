@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'uploads',
     'contests',
     'users.apps.UsersConfig',
+    'register',
 ]
 
 MIDDLEWARE = [
