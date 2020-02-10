@@ -16,6 +16,8 @@
     <title>Smart Tools</title>
 </head>
 <body>
+
+<!-- Barra de navegacion -->
 <nav style="background:rgb(153, 102, 51, 0.5)" class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="/">Smart Tools</a>
@@ -28,11 +30,11 @@
             <ul class="navbar-nav ml-auto my-2 my-lg-0">
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Salir</a>
+                    <a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Salir</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{% url 'login' %}">Entrar</a>
+                    <a class="nav-link js-scroll-trigger" href="{% url 'login' %}">Entrar</a>
                 </li>
                 {% endif %}
 
@@ -40,8 +42,14 @@
         </div>
     </div>
 </nav>
-{% block content %}
-{% endblock %}
+
+
+<!-- Contenido de la vista  -->
+<div style="position:relative;top:100px">
+    {% block content %}
+    {% endblock %}
+</div>
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -13,6 +13,7 @@ from django.views.generic import (
     DeleteView
 )
 
+
 def upload(request):
     if request.method == 'POST':
         form = UploadForm(request.POST, request.FILES)
@@ -25,8 +26,8 @@ def upload(request):
 
     return render(request, 'contests/contest.html', {'form': form})
 
+
 class UploadDetailForm(CreateView):
     model = Video
     success_url = reverse_lazy('contest_test_home')
-    fields = ['title', 'description', 'name', 'sureName', 'email', 'created_At', 'contest']
-
+    fields = ['title', 'description', 'name', 'sureName', 'email']
