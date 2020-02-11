@@ -1,7 +1,12 @@
-<form method="post", enctype="multipart/form-data">
+{% extends 'template-in.html' %}
+{% block content %}
+
+<form method="post" , enctype="multipart/form-data">
 
     {{form.as_p}}
 
     <button type="submit" class="btn"> Upload</button>
 
 </form>
+
+{% endblock %}
